@@ -28,16 +28,28 @@ header h1 {
   margin-bottom: 10px;
 }
 
+
 main {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 30px;
-  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
+
   main {
-    grid-template-columns: 2fr 1fr;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #signup-container {
+    order: 1;
+    max-width: 400px;
+  }
+  #activities-container {
+    order: 2;
+    max-width: 700px;
   }
 }
 
@@ -47,7 +59,8 @@ section {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
+  margin-bottom: 20px;
 }
 
 section h3 {
@@ -57,13 +70,21 @@ section h3 {
   color: #1a237e;
 }
 
+/* Activity cards at the bottom for better navigation */
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s;
 }
+
+.activity-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
 
 .activity-card h4 {
   margin-bottom: 10px;
